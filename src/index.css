@@ -1,0 +1,141 @@
+body {
+  background: #000;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.app .content-holder {
+  margin-bottom: 35px;
+}
+.app .content-holder img {
+  border-radius: 50%;
+  cursor: pointer;
+  width: 100%;
+}
+
+.app .content-holder p {
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  margin-top: -40px;
+}
+
+.modal-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+  opacity: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  animation: show .5s ease;
+}
+
+@keyframes show {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: flex;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  width: 100%;
+  background-color: #fff;
+  color: #000;
+  box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.2);
+  position: relative;
+  padding: 1rem;
+  max-height: 90vh;
+  @media (min-width: 576px) {
+    width: 32rem;
+  }
+}
+.modal-content img {
+  max-height: 80vh;
+}
+.modal-content p:last-of-type {
+    margin-bottom: 0
+}
+
+.close-button {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #34363a;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  outline: 0;
+  box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+}
+
+.close-button:hover {
+  background-color: #424f63
+}
+
+.close-button:before,
+.close-button:after {
+  content: '';
+  position: absolute;
+  top: 1.2rem;
+  left: 0.25rem;
+  width: 2rem;
+  height: 0.1rem;
+  background-color: #fff
+}
+
+.close-button:before {
+  transform: rotate(45deg)
+}
+
+.close-button:after {
+  transform: rotate(-45deg)
+}
+
+.hidden {
+  display: none;
+}
+
+form {
+  font: 1em sans-serif;
+  max-width: 320px;
+}
+
+.form-wrapper p > label {
+  display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea,
+fieldset {
+  width : 100%;
+  border: 1px solid #333;
+  box-sizing: border-box;
+}
+
+input:invalid {
+  box-shadow: 0 0 5px 1px red;
+}
+
+input:focus:invalid {
+  box-shadow: none;
+}
